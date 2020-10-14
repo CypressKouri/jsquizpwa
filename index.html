@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Cypress' NBA Quiz</title>
+  <script src="quizproject.js"></script>
+  <link rel="stylesheet" type="text/css" href="quizproject.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <meta name="theme-color" content="#B07BAC" />
+</head>
+
+<body onLoad="initialize()">
+
+  <div id="lightbox" onclick="closeLightBox()">
+    <div id="message"></div>
+  </div>
+
+
+
+  <h2 class="head">Basketball (NBA) Quiz</h2>
+  <h3 class="head">Find out which NBA star you are!</h3>
+  <br>
+  <button class="head" id="instruction" onclick="instruction()">Instructions</button>
+  <p id="inst"><br><br>Click on the correct answer to proceed to the next question.
+    <br> You have two minutes to answer the first question, giving you time to read the instructions and understand the quiz. <br> For questions 2 through 12, you have 15 seconds to answer. If you take more than the given time, it will mark the question as incorrect and move onto the next question.
+    <br>You may click "lifeline" or "free answer" if you are stuck.
+    <br>Lifeline will eliminate two possible answers; free answer will skip the question and mark it as correct.
+    <br>You can only use these buttons once each, so proceed with caution!
+    <br>If you have already used these buttons and are stumped, you may click "skip question" at the bottom of the page.
+    <br><br>The numbers on the bottom of the screen shows your progress, not your score. Your score and percentage is displayed every time you answer a question.
+    <br><br>Your aptitude on the test will determine which NBA star you are.
+  </p>
+
+  <div class="grid-container">
+    <div class="header">
+      <div id="question">The Question</div>
+    </div>
+
+    <div class="left">
+      <div>
+
+        <div class="options" id="a" onclick="markIt('a')">A.</div>
+        <div class="options" id="b" onclick="markIt('b')">B.</div>
+        <div class="options" id="c" onclick="markIt('c')">C.</div>
+        <div class="options" id="d" onclick="markIt('d')">D.</div>
+        <div class="options" id="e" onclick="markIt('e')">E.</div>
+        <br>
+        <div id="countdown"></div>
+        <br>
+        <button id="lifeline" onclick="lifeLine()">LIFELINE</button><br>
+        <button id="free" onclick="freeAnswer()">FREE ANSWER</button>
+        <br>
+      </div>
+
+    </div>
+
+
+    <div class="right"> <img id="image" src="quizimages/q1.jpg" alt=""></div>
+
+    <div class="footer1">
+      <p id="next" onclick="nextQuestion()">Skip Question</p>
+    </div>
+
+    <div class="footer2">
+      <p id="score">1/12</p>
+    </div>
+
+    <div class="footer3">
+      Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
